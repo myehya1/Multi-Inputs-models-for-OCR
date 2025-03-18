@@ -1,0 +1,7 @@
+ocrenv/
+__pycache__/
+*.ipynb_checkpoints
+.DS_Store
+*.csv
+*.pkl
+*.h5

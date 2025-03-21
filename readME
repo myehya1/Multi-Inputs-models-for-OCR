@@ -1,0 +1,92 @@
+# OCR Insurance Code Classification
+
+This project is a machine learning model designed to classify insurance codes based on their images and types. The model takes an image of an insurance code and its type as input and predicts whether the code is a `primary_id` or `secondary_id`.
+
+## Project Overview
+
+The goal of this project is to build a machine learning model that can classify insurance codes into two categories:
+
+- **Primary ID**
+- **Secondary ID**
+
+The model uses:
+
+- **Image Data**: Grayscale images of insurance codes (64x64 pixels).
+- **Type Data**: One-hot encoded vectors representing the type of insurance (e.g., home, auto, health, etc.).
+
+---
+
+## Dataset
+
+The dataset contains **100 samples**, each with:
+
+1. **Image**: A grayscale image of size `64x64` pixels.
+2. **Type**: A one-hot encoded vector of length `5` representing the insurance type.
+3. **Label**: A scalar value (`0` or `1`) representing `primary_id` or `secondary_id`.
+
+### Dataset Statistics
+
+- **Label Distribution**:
+  - `primary_id`: 47 samples
+  - `secondary_id`: 53 samples
+- **Type Distribution**:
+  - `home`: 16 samples
+  - `life`: 20 samples
+  - `auto`: 26 samples
+  - `health`: 16 samples
+  - `other`: 22 samples
+
+---
+
+## Model Architecture
+
+The model is a neural network with the following architecture:
+
+1. **Image Processing**:
+   - Convolutional layers to extract features from the image.
+   - Fully connected layers to process the extracted features.
+2. **Type Processing**:
+   - Fully connected layers to process the type of insurance.
+3. **Classifier**:
+   - Combines the features from the image and type.
+   - Predicts the label (`primary_id` or `secondary_id`).
+
+## Setup
+
+### Prerequisites
+
+- Python 3.x
+- PyTorch
+- NumPy
+- Matplotlib
+- Pickle
+
+### Installation
+
+1. Clone the repository:
+   git clone https://github.com/myehya1/Multi-Inputs-models-for-OCR.git
+2. Install the required packages:
+   pip install -r requirements.txt
+
+## Results
+
+After training for 10 epochs, the model achieves the following results:
+
+Training Loss: 0.3882630467414856
+
+## Future Work
+
+1. **Data Augmentation**:
+
+   - Generate more samples for underrepresented types (`home` and `health`) using techniques like rotation, flipping, and scaling to balance the dataset.
+
+2. **Hyperparameter Tuning**:
+
+   - Experiment with different learning rates, batch sizes, and model architectures to improve the model's performance.
+
+3. **Expand Dataset**:
+
+   - Collect more data to increase the size of the dataset, especially for underrepresented types, to improve the model's generalization.
+
+4. **Advanced Models**:
+   - Experiment with more advanced architectures like ResNet, EfficientNet, or Transformer-based models to achieve better accuracy.
